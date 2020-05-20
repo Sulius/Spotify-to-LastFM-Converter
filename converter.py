@@ -9,7 +9,7 @@ def main():
     start_time = time.clock()
     file = 'StreamingHistory0.json'  # Choose your input file here
 
-    num_lines = sum(1 for line in open(file))
+    num_lines = sum(1 for line in open(file, encoding="utf8"))
 
     lines = []
     for i in range(1, num_lines):  # convert json into lines
