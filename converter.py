@@ -6,7 +6,7 @@ import pandas
 
 def main():
     print("Starting convert\n")
-    start_time = time.clock()
+    start_time = time.perf_counter()
     file = 'StreamingHistory0.json'  # Choose your input file here
 
     num_lines = sum(1 for line in open(file, encoding="utf8"))
@@ -37,7 +37,7 @@ def main():
     output_file = pandas.DataFrame(all_songs)  # For some reason I couldn't get this to work without pandas
     output_file.to_csv('output.csv', index=False, header=False)  # Make sure that the output file exist and is empty!
 
-    print("\nConvert finished in " + str(time.clock() - start_time), "seconds.")
+    print("\nConvert finished in " + str(time.perf_counter() - start_time), "seconds.")
 
 
 def match(strng):  # extract relevant info
